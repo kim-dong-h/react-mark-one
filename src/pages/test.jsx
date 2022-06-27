@@ -10,7 +10,6 @@ function Test() {
   // const toggleKitchen = () => setKitchenOn(!kitchenOn);
   // const toggleBath = () => setBathOn(!bathOn);
 
-  // git 로그 추가
   const toggleMaster = useCallback(() => setMasterOn(!masterOn), [masterOn]);
   const toggleKitchen = useCallback(() => setKitchenOn(!kitchenOn), [kitchenOn]);
   const toggleBath = useCallback(() => setBathOn(!bathOn), [bathOn]);
