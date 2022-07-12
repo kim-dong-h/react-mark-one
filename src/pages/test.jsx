@@ -1,5 +1,8 @@
 import React, { useState, useCallback } from "react";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import Light from "../components/Light";
+import { setId } from "../store/reducers/test";
 
 function Test() {
   const [masterOn, setMasterOn] = useState(false);
@@ -14,6 +17,17 @@ function Test() {
   const toggleMaster = useCallback(() => setMasterOn(!masterOn), [masterOn]);
   const toggleKitchen = useCallback(() => setKitchenOn(!kitchenOn), [kitchenOn]);
   const toggleBath = useCallback(() => setBathOn(!bathOn), [bathOn]);
+
+  const id = useSelector((state) => state.test.id);
+
+  console.log(id);
+
+  const dispatch = useDispatch();
+
+  dispatch(setId("kim"));
+
+
+  console.log(id);
 
   return (
     <>
